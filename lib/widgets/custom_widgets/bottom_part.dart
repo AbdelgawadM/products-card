@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:session_task1/widgets/custom_button.dart';
-import 'package:session_task1/widgets/statement_row.dart';
+import 'package:session_task1/widgets/custom_widgets/custom_button.dart';
+import 'package:session_task1/widgets/custom_widgets/statement_row.dart';
 
 class BottomPart extends StatelessWidget {
   const BottomPart({

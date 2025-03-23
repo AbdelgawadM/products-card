@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:session_task1/widgets/custom_button.dart';
+import 'package:session_task1/widgets/custom_widgets/custom_button.dart';
 
-class CardBuilder extends StatelessWidget {
-  const CardBuilder({
+class CardItem extends StatelessWidget {
+  const CardItem({
     super.key,
     required this.title,
     required this.price,

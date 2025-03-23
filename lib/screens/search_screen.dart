@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:session_task1/models/offer_model.dart';
-import 'package:session_task1/screens/description_screen.dart';
 import 'package:session_task1/scrolling/scrolling_options.dart';
-import 'package:session_task1/widgets/card_builder.dart';
-import 'package:session_task1/widgets/custom_text_form.dart';
+import 'package:session_task1/widgets/builder_widgets/card_builder.dart';
+import 'package:session_task1/widgets/custom_widgets/custom_text_form.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});
@@ -41,22 +40,7 @@ class SearchScreen extends StatelessWidget {
                   height: 20,
                 ),
               ),
-              SliverList.separated(
-                  separatorBuilder: (context, index) => const SizedBox(
-                        height: 20,
-                      ),
-                  itemBuilder: (context, index) {
-                    return CardBuilder(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const DescriptionScreen(),
-                          ));
-                        },
-                        title: offerList[index].title,
-                        price: offerList[index].price,
-                        desc: offerList[index].desc);
-                  },
-                  itemCount: offerList.length),
+              CardBuilder(offerList: offerList),
               const SliverToBoxAdapter(
                 child: SizedBox(
                   height: 15,

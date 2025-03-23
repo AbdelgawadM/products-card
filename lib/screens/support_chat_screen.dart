@@ -1,61 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:session_task1/scrolling/scrolling_options.dart';
-import 'package:session_task1/widgets/chat_builder.dart';
-import 'package:session_task1/widgets/search_text_form.dart';
-import 'package:session_task1/widgets/story_builder.dart';
 
 class SupportChatScreen extends StatelessWidget {
   const SupportChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScrollingOptions(
-      child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(
         backgroundColor: const Color(0xff497D74),
-        appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon:
-                  const Icon(size: 30, color: Colors.white, Icons.arrow_back)),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                size: 30,
-                color: Colors.white,
-                Icons.list,
-              ),
-            ),
-          ],
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.black,
-          title: const Text(
-            'Support Chat',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
+        title: const Text(
+          'Support',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
         ),
-        body: const Padding(
-          padding: EdgeInsets.all(10),
-          child: CustomScrollView(
-            slivers: [
-              SearchTextForm(),
-              SliverToBoxAdapter(child: SizedBox(height: 20)),
-              SliverToBoxAdapter(
-                child: SliverToBoxAdapter(
-                  child: SizedBox(
-                    height: 110,
-                    width: double.infinity,
-                    child: StoryBuilder(),
+        centerTitle: false,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: TextFormField(
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black45,
+                  fontSize: 20,
+                  letterSpacing: 2),
+              decoration: const InputDecoration(
+                  hintText: 'type a message...',
+                  hintStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black45,
+                      fontSize: 20,
+                      letterSpacing: 2),
+                  fillColor: Color(0xffF1F0E9),
+                  filled: true,
+                  suffixIcon: Icon(
+                    Icons.send,
+                    color: Colors.black,
                   ),
-                ),
-              ),
-              ChatBuilder(),
-            ],
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xffF1F0E9)),
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xffF1F0E9)),
+                      borderRadius: BorderRadius.all(Radius.circular(30)))),
+            ),
           ),
-        ),
+          const SizedBox(
+            height: 30,
+          )
+        ],
       ),
     );
   }

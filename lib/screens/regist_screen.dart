@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:session_task1/screens/login_screen.dart';
 import 'package:session_task1/screens/search_screen.dart';
-import 'package:session_task1/widgets/avatar.dart';
-import 'package:session_task1/widgets/bottom_part.dart';
-import 'package:session_task1/widgets/custom_text_form.dart';
-import 'package:session_task1/widgets/password_text_form.dart';
+import 'package:session_task1/widgets/custom_widgets/avatar.dart';
+import 'package:session_task1/widgets/custom_widgets/bottom_part.dart';
+import 'package:session_task1/widgets/custom_widgets/custom_text_form.dart';
+import 'package:session_task1/widgets/custom_widgets/password_text_form.dart';
 
 class RegistScreen extends StatelessWidget {
   const RegistScreen({super.key});
